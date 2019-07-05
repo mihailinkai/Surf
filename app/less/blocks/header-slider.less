@@ -1,4 +1,11 @@
-.slide-item{
+.slide-wrapper {
+ position: relative; 
+
+
+}
+
+
+.slide-item {
 
 display: flex;
 justify-content: flex-end;
@@ -74,5 +81,47 @@ box-shadow: -16px 25px 65px rgba(11, 12, 17, 0.2);
 
 .slide-item__img--bg-1 {
     background-image:url("../img/img/img-header.jpg");
+
+}
+
+.slide-controls {
+position: absolute;
+width: 81px;
+display: flex;
+justify-content: space-between;
+
+
+}
+
+.slide-controls__left {
+
+
+}
+
+.slide-controls__number {
+
+
+    /* Style for "1/5" */
+width: 25px;
+height: 10px;
+color: #262626;
+font-family: "League Spartan";
+font-size: 10px;
+font-weight: 700;
+line-height: 66px;
+/* Text style for "1" */
+color: #5da8ef;
+letter-spacing: 4px;
+/* Text style for "/" */
+color: #ebebeb;
+letter-spacing: 4px;
+text-transform: uppercase;
+/* Text style for "5" */
+letter-spacing: 4px;
+
+}
+
+.slide-controls__right {
+
 
 }
