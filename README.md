@@ -1,3 +1,3 @@
 # Surf
 
-https://mihailinkai.github.io/Surf/
+https://mihailinkai.github.io/Surf-site/
