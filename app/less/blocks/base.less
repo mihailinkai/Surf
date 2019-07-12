@@ -2,10 +2,10 @@ body {
 
     // background: #ffd2ee;
     background-image: url("../img/bg/bg-lines.png");
-background-repeat: repeat-y;
-background-position: center;
-background-size: initial;
-font-family: sans-serif;
+    background-repeat: repeat-y;
+    background-position: center;
+    background-size: initial;
+    font-family: sans-serif;
 }
 
 
@@ -21,15 +21,57 @@ font-family: sans-serif;
 }
 
 
+.relative {
+
+    position: relative;
+}
+
+.site-desc {
+
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    right: -50px;
+    top: 58px;
+
+}
+
+.site-desc__content {
+
+    color: rgba(11, 12, 17, 0.2);
+    font-family: "League-Spartan", sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 5.4px;
+    transform: rotate(-90deg) translate(-100%, 0);
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform-origin: left top;
+
+}
 
 
+.header-social {
+    width: 20px;
 
+    position: absolute;
+    right: -45px;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
 
+.header-social__item {
 
+    margin-bottom: 34px;
 
+    &:last-child {
 
-
-
-
-
-
+        margin-bottom: 0;
+    }
+    }
