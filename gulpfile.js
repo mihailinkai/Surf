@@ -6,16 +6,12 @@ var notify = require('gulp-notify');
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
 var watch = require('gulp-watch');
-
-gulp.task('server', ['styles'], function() {
+var fileinclude = require('gulp-file-include');
+gulp.task('server', ['styles', 'html'], function() {
 	
 	browserSync.init({
 		server: { baseDir: './app/'}
 	});
-
-	// watch('./app/**/*.html', browserSync.stream());
-	// watch('./app/**/*.js', browserSync.reload());
-	// watch('./app/img/*.*', browserSync.reload());
 
 
     watch(['./app/**/*.html', './app/**/*.js', './app/img/*.*']).on('change', browserSync.reload);
@@ -23,6 +19,10 @@ gulp.task('server', ['styles'], function() {
 
 	watch('./app/less/**/*.less', function(){
 		gulp.start('styles');
+	});
+
+	watch('./app/html/**/*.html', function(){
+		gulp.start('html');
 	});
 
 });
@@ -35,18 +35,37 @@ gulp.task('styles', function() {
 				title: 'Styles',
 				sound: false,
 				message: err.message
-			}
+			};
 		})
 	}))
 	.pipe(sourcemaps.init())
 	.pipe(less())
 	.pipe(autoprefixer({
-		browsers: ['last 6 versions'],
+		overrideBrowserslist: ['last 6 versions'],
 		cascade: false
 	}))
 	.pipe(sourcemaps.write())
 	.pipe(gulp.dest('./app/css'))
 	.pipe(browserSync.stream());
+});
+
+gulp.task('html', function() {
+	return gulp.src('./app/html/*.html')
+	.pipe(plumber({
+		errorHandler: notify.onError(function(err){
+			return {
+				title: 'HTML include',
+				sound: false,
+				message: err.message
+			};
+		})
+	}))
+	.pipe(fileinclude({
+prefix: '@@'
+
+	}))
+	.pipe(gulp.dest('./app/'));
+
 });
 
 gulp.task('default', ['server']);
