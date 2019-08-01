@@ -1,5 +1,4 @@
 body {
-
     // background: #ffd2ee;
     background-image: url("../img/bg/bg-lines.png");
     background-repeat: repeat-y;
@@ -13,7 +12,6 @@ body {
 // container
 
 .container {
-
     width: 1224px;
     margin-left: auto;
     margin-right: auto;
@@ -23,12 +21,9 @@ body {
 
 .relative {
     position: relative;
-
-
 }
 
 .read-more-link, a.read-more-link {
-
     color: #333333;
     text-decoration: none;
     font-family: "League-Spartan", sans-serif;
@@ -39,6 +34,7 @@ body {
     letter-spacing: 5.4px;
     position: relative;
     padding-bottom: 10px;
+    display: inline-block;
 
 
 &::after {
@@ -47,20 +43,32 @@ body {
     right: 0;
     bottom: 0;
     content: "";
-    width: 99px;
     height: 2px;
     background-color: rgba(93,168,239,0.7);
 }
 
 
-
-
-
-
-
-
 }
 
+.title {
+    color: #333333;
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.42px;
+    text-align: center;
+}
 
-
+.subtitle {
+    display: block;
+    color: #5da8ef;
+    font-family: "League-Spartan", sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 5.4px;
+    text-align: center;
+}
 
