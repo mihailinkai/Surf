@@ -4,12 +4,25 @@
     padding-bottom: 60px;
 }
 
+.article--odd {
+flex-direction: row-reverse;
+
+
+
+}
 
 .article__desc {
     width: 462px;
     padding-left: 70px;
     padding-right: 50px;
     padding-top: 80px;
+
+    .article--odd & {
+       width: 515px;
+       flex: 0 0 515px;
+       padding-left: 75px;
+       padding-right: 105px;
+    }
 
 }
 
@@ -51,16 +64,51 @@ background-color: #5da8ef;
     }
 }
 
-
 .article__text {
     margin-bottom: 60px;
     .desc-text;
 }
 
-.read-more-link {}
+.article__preview {
+width: 762px;
+position: relative;
+flex: 0 0 762px;
 
-.article__preview {}
+.article--odd & {
+    width: 490px;
+flex: 0 0 490px;
 
-.article__preview-desc {}
 
-.article__preview-desc-content {}
+}
+
+
+}
+
+.article__preview-desc {
+// background-color: red;
+width: 10px;
+height: 10px;
+position: absolute;
+right: -30px;
+top: 0px;
+
+.article--odd & {
+  left: -30px;
+  right: auto;
+ }
+
+
+}
+
+.article__preview-desc-content {
+.vertical-text;
+
+}
+
+
+ 
+
+
+
+
+
