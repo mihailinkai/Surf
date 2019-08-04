@@ -1,0 +1,37 @@
+.social {
+
+    display: flex;
+    justify-content: center;
+    // width: 20px;
+    // position: absolute;
+    // right: -45px;
+    // bottom: 0;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: flex-end;
+    // align-items: center;
+
+    &--vertical {
+        width: 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+.social__item {
+    margin-left: 15px;
+    margin-right: 15px;
+
+    .social--vertical & {
+        margin: 0;
+        margin-bottom: 35px;
+
+        &:last-child {
+
+            margin-bottom: 0;
+        }
+
+    }
+
+}
