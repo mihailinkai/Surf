@@ -5,8 +5,11 @@ body {
     background-position: center;
     background-size: initial;
     font-family: sans-serif;
-    padding-bottom: 600px;
+}
 
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 
@@ -18,29 +21,29 @@ body {
     padding-right: 15px;
     margin-left: auto;
     margin-right: auto;
-  
+
 
 
     @media (min-width: 1254px) {
         width: 1224px;
         padding-left: 0;
         padding-right: 0;
-       
+
     }
 
 }
 
 .flex-end {
-display: flex;
-justify-content:flex-end;
+    display: flex;
+    justify-content: flex-end;
 
 }
 
 .flex-column-center {
-display: flex;
-flex-direction: column;
-align-items: center;
-     
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 
 
@@ -48,7 +51,8 @@ align-items: center;
     position: relative;
 }
 
-.read-more-link, a.read-more-link {
+.read-more-link,
+a.read-more-link {
     color: #333333;
     text-decoration: none;
     font-family: "League-Spartan", sans-serif;
@@ -62,27 +66,27 @@ align-items: center;
     display: inline-block;
 
 
-&::after {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    content: "";
-    height: 2px;
-    background-color: rgba(93,168,239,0.7);
-}
+    &::after {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        content: "";
+        height: 2px;
+        background-color: rgba(93, 168, 239, 0.7);
+    }
 
 
 }
 
 .desc-text {
-    color: rgba(97,97,97,0.6);
+    color: rgba(97, 97, 97, 0.6);
     font-family: Poppins, sans-serif;
     font-size: 14px;
     font-weight: 300;
     line-height: 24px;
     letter-spacing: 0.35px;
-    }
+}
 
 
 .title {
@@ -110,7 +114,7 @@ align-items: center;
 
 .title-desc {
     .desc-text;
-margin-bottom: 35px;
+    margin-bottom: 35px;
 }
 
 
@@ -129,5 +133,5 @@ margin-bottom: 35px;
     left: 0;
     top: 0;
     transform-origin: left top;
-    
+
 }

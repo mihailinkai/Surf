@@ -1,47 +1,64 @@
 .quote {
-    padding-top: 95px;
-    padding-bottom: 110px;
+    padding-top: 95px/2;
+    padding-bottom: 110px/2;
+
+    @media (min-width: 992px) {
+        padding-top: 95px;
+        padding-bottom: 110px;
+    }
 }
 
 
 .quote-wrapper {
-width: 610px;
-margin: 0 auto; 
-text-align: center;
-position: relative;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
 
-&:after {
-content: "";
-width: 2px;
-height: 100px;
-background-color: #5da8ef;
-position: absolute;
-bottom: -50px;
-left:50%;
-transform: translate(-50%, 100%);
+    @media (min-width: 640px) {
+        width: 610px;
+        padding: 0;
+    }
 
+    &:after {
+        content: "";
+        width: 2px;
+        height: 100px/2;
+        background-color: #5da8ef;
+        position: absolute;
+        bottom: -58px/2;
+        left: 50%;
+        transform: translate(-50%, 100%);
+
+
+        @media (min-width: 992px) {
+            height: 100px;
+            bottom: -58px;
+        }
+    }
 }
-
-}
-
 
 .quote__text {
-color: rgba(51,51,51,0.9);
-font-family: 'Playfair Display', serif;
-font-size: 26px;
-font-weight: 400;
-line-height: 38px;
-letter-spacing: 0.26px;
-margin-bottom: 25px;
+    color: rgba(51, 51, 51, 0.9);
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.46;
+    letter-spacing: 0.26px;
+    margin-bottom: 25px;
+
+    @media (min-width: 992px) {
+       font-size: 26px;
+    }
 }
 
 .quote__author {
-color: rgba(51,51,51,0.9);
-font-family: 'League Spartan', sans-serif;
-font-size: 9px;
-font-weight: 700;
-line-height: 1;
-text-transform: uppercase;
-letter-spacing: 5.4px;
-
+    color: rgba(51, 51, 51, 0.9);
+    font-family: 'League Spartan', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 5.4px;
 }

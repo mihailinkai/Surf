@@ -1,128 +1,168 @@
 .article {
     display: flex;
-    padding-top: 60px;
-    padding-bottom: 60px;
+    flex-direction: column-reverse;
+    padding-top: 60px/2;
+    padding-bottom: 60px/2;
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
 }
 
 .article--odd {
-flex-direction: row-reverse;
+    flex-direction: column-reverse;
 
-
-
+    @media (min-width: 768px) {
+        flex-direction: row-reverse;
+    }
 }
 
 .article__desc {
-    width: 462px;
-    padding-left: 70px;
-    padding-right: 50px;
-    padding-top: 80px;
+    width: auto;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 20px;
 
-    .article--odd & {
-       width: 515px;
-       flex: 0 0 515px;
-       padding-left: 75px;
-       padding-right: 105px;
+    @media (min-width: 768px) {
+        padding-right: 15px;
     }
 
+    @media (min-width: 1254px) {
+        padding-left: 70px;
+        padding-right: 50px;
+        padding-top: 80px;
+        width: 462px;
+    }
+
+    .article--odd & {
+        width: 100%;
+
+        @media (min-width: 768px) {
+            padding-left: 15px;
+        }
+
+        @media (min-width: 1254px) {
+            width: 515px;
+            flex: 0 0 515px;
+            padding-left: 75px;
+            padding-right: 105px;
+        }
+    }
 }
 
 .article__title {
     color: #333333;
     font-family: "Playfair Display", serif;
-    font-size: 42px;
+    font-size: 32px;
     font-weight: 700;
-    line-height: 66px;
+    line-height: 2;
     letter-spacing: 0.42px;
     position: relative;
-    margin-bottom: 45px;
+    margin-bottom: 15px;
 
+    @media (min-width: 1254px) {
+        font-size: 42px;
+        margin-bottom: 45px;
+    }
 
     &:before {
         content: attr(data-number);
         color: #f9f9f9;
         font-family: "League Spartan", sans-serif;
-        font-size: 130px;
+        font-size: 70px;
         font-weight: 700;
         line-height: 66px;
         letter-spacing: 13px;
         position: absolute;
         left: 0;
-        top: -17px;
+        top: -5px;
         z-index: -1;
 
+        @media (min-width: 1254px) {
+            font-size: 130px;
+            top: -17px;
+        }
     }
 
     &:after {
-content:  "";
-position: absolute;
-left: 0;
-bottom: -5px;
-width: 23px;
-height: 2px;
-background-color: #5da8ef;
-
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 23px;
+        height: 2px;
+        background-color: #5da8ef;
     }
 }
 
 .article__text {
-    margin-bottom: 60px;
+    margin-bottom: 20px;
     .desc-text;
+
+    @media (min-width: 1254px) {
+        margin-bottom: 60px;
+    }
 }
 
 .article__preview {
-width: 762px;
-position: relative;
-flex: 0 0 762px;
+    width: 100%;
+    position: relative;
+    margin-bottom: 25px;
 
-.article--odd & {
-    width: 490px;
-flex: 0 0 490px;
+    @media (min-width: 768px) {
+        width: 50%;
+        flex: 0 0 50%;
+    }
 
+    @media (min-width: 1254px) {
+        width: 762px;
+        flex: 0 0 762px;
+        margin-bottom: 0;
+    }
 
-}
+    .article--odd & {
+        width: 100%;
 
-
-}
-
-.article__preview-desc {
-// background-color: red;
-width: 10px;
-height: 10px;
-position: absolute;
-right: -30px;
-top: 0px;
-
-
-
-.article--even & {
-
-    @media (max-width: 1400px) {
-        right: 30px;
-        top: 30px;
-    
-        .article__preview-desc-content {
-            color: #FFF;
-            font-size: 8px;
+        @media (min-width: 1254px) {
+            width: 490px;
+            flex: 0 0 490px;
         }
     }
 }
-.article--odd & {
-  left: -30px;
-  right: auto;
- }
 
+.article__preview-desc {
+    // background-color: red;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    right: -30px;
+    top: 0px;
 
+    .article--even & {
+
+        @media (max-width: 1400px) {
+            right: 30px;
+            top: 30px;
+
+            .article__preview-desc-content {
+                color: #FFF;
+            }
+        }
+    }
+
+    .article--odd & {
+        left: 30px;
+        top: 30px;
+
+        @media (min-width: 1254px) {
+          left: -30px;
+          top: 0;
+        }
+    }
 }
 
 .article__preview-desc-content {
-.vertical-text;
-
+    .vertical-text;
 }
-
-
- 
-
-
-
-
-
